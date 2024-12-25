@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <!-- Phần cấu hình bài test -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-cog"></i> Cấu hình bài test
+                    </h5>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="numQuestions" class="col-form-label">Số câu hỏi:</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" id="numQuestions" class="form-control" value="10" min="1" max="50">
+                        </div>
+                        <div class="col-auto">
+                            <button onclick="startQuiz()" class="btn btn-primary">
+                                <i class="fas fa-play"></i> Bắt đầu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thống kê -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-chart-bar"></i> Thống kê
+                    </h5>
+                    <div class="question-stats">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <h6>Tổng số bài làm</h6>
+                                <span class="score-badge" id="totalQuizzes">0</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h6>Điểm trung bình</h6>
+                                <span class="score-badge" id="averageScore">0%</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h6>Câu sai</h6>
+                                <span class="score-badge" id="totalWrong">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần làm bài trắc nghiệm -->
+            <div class="card" id="quizSection" style="display: none;">
+                <div class="card-body">
+                    <!-- Thanh tiến độ -->
+                    <div class="progress mb-3">
+                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    
+                    <!-- Thông tin tiến độ -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <span id="questionProgress" class="badge bg-primary">Câu hỏi: 0/0</span>
+                        <span id="scoreProgress" class="badge bg-success">Điểm: 0/0</span>
+                    </div>
+
+                    <h5 class="card-title mb-4">
+                        <i class="fas fa-question-circle"></i> Câu hỏi trắc nghiệm
+                    </h5>
+                    
+                    <!-- Loại câu hỏi -->
+                    <div class="btn-group mb-3" role="group">
+                        <button type="button" class="btn btn-outline-primary active" onclick="changeQuestionType('word')">
+                            <i class="fas fa-font"></i> Từ vựng
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" onclick="changeQuestionType('pronunciation')">
+                            <i class="fas fa-volume-up"></i> Phát âm
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" onclick="changeQuestionType('meaning')">
+                            <i class="fas fa-language"></i> Nghĩa
+                        </button>
+                    </div>
+
+                    <!-- Hiển thị câu hỏi -->
+                    <div id="questionContainer">
+                        <p id="questionText" class="h5 mb-3"></p>
+                        <div id="choices" class="mb-3"></div>
+                    </div>
+
+                    <!-- Nút điều khiển -->
+                    <div class="mt-3">
+                        <button onclick="checkAnswer()" class="btn btn-success" id="checkBtn">
+                            <i class="fas fa-check"></i> Kiểm tra
+                        </button>
+                        <button onclick="nextQuestion()" class="btn btn-primary" id="nextBtn" style="display: none;">
+                            <i class="fas fa-arrow-right"></i> Câu tiếp theo
+                        </button>
+                    </div>
+
+                    <!-- Kết quả -->
+                    <div id="result" class="mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Kết quả cuối cùng -->
+            <div class="card mt-4" id="finalResult" style="display: none;">
+                <div class="card-body text-center">
+                    <h4 class="card-title">
+                        <i class="fas fa-trophy"></i> Kết quả bài test
+                    </h4>
+                    <p class="display-4" id="finalScore">0/0</p>
+                    <div class="mt-3">
+                        <button onclick="startQuiz()" class="btn btn-primary">
+                            <i class="fas fa-redo"></i> Làm lại bài test
+                        </button>
+                        <button onclick="reviewWrongAnswers()" class="btn btn-warning" id="reviewBtn">
+                            <i class="fas fa-sync"></i> Ôn tập câu sai
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lịch sử làm bài -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-history"></i> Lịch sử làm bài
+                    </h5>
+                    <div class="table-responsive">
+                        <table class="table history-table">
+                            <thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Số câu</th>
+                                    <th>Đúng</th>
+                                    <th>Điểm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

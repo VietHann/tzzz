@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --success-color: #4CAF50;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Font cho chữ Trung Quốc */
+.chinese-text {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.5em;  /* Tăng kích thước chữ */
+    font-weight: 500;  /* Độ đậm vừa phải */
+    line-height: 1.5;
+}
+
+/* Style cho phiên âm */
+.pinyin {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #3d8b40;
+    border-color: #3d8b40;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.question-stats {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.word-details {
+    background-color: rgba(255,255,255,0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.word-details p {
+    margin-bottom: 8px;
+}
+
+.word-details .chinese-word {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.word-details .pinyin {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.word-details .meaning {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.history-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.history-table th {
+    background-color: var(--light-bg);
+    padding: 12px;
+}
+
+.history-table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.score-badge {
+    font-size: 1.2em;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.review-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.review-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 4px solid var(--danger-color);
+    background-color: #fff3e0;
+}
+
+/* Style cho câu hỏi */
+#questionText {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style cho các lựa chọn */
+.form-check {
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.form-check:hover {
+    background-color: #f8f9fa;
+}
+
+.form-check-label {
+    font-size: 1.1em;
+    padding-left: 10px;
+} 

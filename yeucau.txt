@@ -1,0 +1,70 @@
+Yêu cầu chi tiết
+1. Tính năng chính
+load file Excel.
+Định dạng dữ liệu gồm các cột:
+Chữ viết: Từ hoặc cụm từ.
+Phiên âm: Cách phát âm bằng ký hiệu IPA.
+Phát âm: Link hoặc file phát âm âm thanh.
+(Tiếng Việt): Loại từ hoặc chú thích ngữ pháp.
+Nghĩa: Nghĩa tiếng Việt.
+Sinh flashcards:
+
+Hiển thị flashcards để học từ vựng với các thông tin:
+Mặt trước: Chữ viết.
+Mặt sau: Phiên âm, Phát âm, (Tiếng Việt), và Nghĩa.
+Sinh bộ câu hỏi trắc nghiệm:
+
+Tạo bộ câu hỏi dựa trên từng cột:
+Chữ viết: Câu hỏi yêu cầu chọn phiên âm đúng.
+Phiên âm: Câu hỏi yêu cầu chọn từ đúng.
+Nghĩa: Câu hỏi yêu cầu chọn nghĩa tiếng Việt phù hợp.
+Phát âm: Câu hỏi yêu cầu nghe và chọn từ tương ứng.
+Lưu trữ kết quả:
+
+Ghi nhận điểm số và tiến độ của người học.
+2. Công nghệ đề xuất
+Frontend:
+
+Framework: HTML CSS JS
+Thư viện UI: Material-UI / Bootstrap.
+Backend:
+
+Framework: Flask (Python) 
+API:
+Xử lý file Excel: Thư viện pandas (Python).
+Sinh flashcards và câu hỏi: Xử lý bằng các hàm Python hoặc logic backend.
+Quản lý người dùng và kết quả học tập.
+Excel xử lý:
+
+Dùng openpyxl hoặc pandas để đọc dữ liệu từ file Excel.
+Quy trình hoạt động của ứng dụng
+1. Tải dữ liệu từ Excel
+load File 
+Backend:
+Đọc file Excel, kiểm tra định dạng và xử lý lỗi nếu không khớp.
+2. Hiển thị flashcards
+Chia flashcards theo từng từ:
+Mỗi từ sẽ hiển thị lần lượt trên giao diện.
+3. Sinh câu hỏi trắc nghiệm
+Với mỗi từ, tạo ít nhất một câu hỏi từ mỗi cột:
+Sinh câu hỏi và lựa chọn sai ngẫu nhiên.
+Lưu trữ lịch sử người dùng đã làm.
+4. Lưu kết quả và quản lý tiến độ
+Lưu kết quả làm bài của người học.
+Hiển thị số lượng từ đã học, điểm số, và tiến độ.
+Gợi ý giao diện
+Trang chính:
+....
+Trang học flashcards:
+
+Flashcards hiển thị từng từ một.
+Nút "Tiếp theo" để chuyển từ.
+Trang làm bài trắc nghiệm:
+
+Hiển thị từng câu hỏi với 4 lựa chọn.
+Nút "Xác nhận" để kiểm tra đáp án.
+Trang kết quả:
+
+Điểm số.
+Số câu đúng/sai.
+Gợi ý học lại những từ sai.
